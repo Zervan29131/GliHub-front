@@ -33,13 +33,13 @@ import {
                         </el-icon>
                         <span>信息管理</span>
                     </el-menu-item>
-                    <el-menu-item>
+                    <el-menu-item index="/user/area">
                         <el-icon>
                             <Crop />
                         </el-icon>
                         <span>作业区管理</span>
                     </el-menu-item>
-                    <el-menu-item>
+                    <el-menu-item index="/user/equipment">
                         <el-icon>
                             <EditPen />
                         </el-icon>
@@ -47,7 +47,7 @@ import {
                     </el-menu-item>
                 </el-sub-menu>
                 <!-- 安全评价模块 -->
-                <el-menu-item index="/article/category">
+                <el-menu-item index="/evaluate/Evaluate">
                     <el-icon>
                         <!-- 子路由 -->
                         <Management />

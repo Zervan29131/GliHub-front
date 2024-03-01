@@ -6,26 +6,42 @@ import Login from '@/views/login.vue'
 import regist from '@/views/regist.vue'
 import Home from '@/views/home.vue'
 
-import ArticleCategoryVue from '@/views/article/ArticleCategory.vue'
-import ArticleManageVue from '@/views/article/ArticleManage.vue'
-import UserAvatarVue from '@/views/user/UserAvatar.vue'
+// import ArticleCategoryVue from '@/views/article/ArticleCategory.vue'
+// import UserAvatarVue from '@/views/user/UserAvatar.vue'
+// import UserResetPasswordVue from '@/views/user/UserResetPassword.vue'
+//用户管理
 import UserInfoVue from '@/views/user/UserInfo.vue'
-import UserResetPasswordVue from '@/views/user/UserResetPassword.vue'
+import UserAreaVue from '@/views/user/UserArea.vue'
+import UserEquipmentVue from '@/views/user/UserEquipment.vue'
+//安全评价
+import Evaluate from '@/views//evaluate/Evaluate.vue'
+
+
+import ArticleManageVue from '@/views/user/UserInfo.vue'
 
 
 const routes = [
   { path: '/regist', component: regist },
   { path: '/login', component: Login },
-  { path: '/', component: Home,
+  {
+    path: '/', component: Home,
     //重定向
     redirect: '/article/manage',
     //子路由
     children: [
-      { path: '/article/category', component: ArticleCategoryVue },
+      // { path: '/article/category', component: ArticleCategoryVue },
       { path: '/article/manage', component: ArticleManageVue },
+      //用户管理
       { path: '/user/info', component: UserInfoVue },
-      { path: '/user/avatar', component: UserAvatarVue },
-      { path: '/user/password', component: UserResetPasswordVue },
+      { path: '/user/area', component: UserAreaVue },
+      { path: '/user/equipment', component: UserEquipmentVue },
+      //安全评价
+      { path: '/evaluate/Evaluate', component: Evaluate },
+
+
+
+      // { path: '/user/avatar', component: UserAvatarVue },
+      // { path: '/user/password', component: UserResetPasswordVue },
     ]
   }
 
