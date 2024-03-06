@@ -68,7 +68,7 @@ import {
         <el-container>
             <!-- 头部区域 -->
             <el-header>
-                <div>企业安全信息管理系统：<strong>zervan</strong></div>
+                <div><strong>企业安全管理系统</strong></div>
                 <el-dropdown placement="bottom-end">
                     <span class="el-dropdown__box">
                         <el-avatar :src="avatar" />
@@ -95,7 +95,7 @@ import {
 
             </el-main>
             <!-- 底部区域 -->
-            <el-footer>glihub ©2023 Created by zervan</el-footer>
+            <el-footer>glihub ©2023 Created by Zervan</el-footer>
         </el-container>
     </el-container>
 </template>

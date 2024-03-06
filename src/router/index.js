@@ -37,7 +37,14 @@ const routes = [
       { path: '/user/equipment', component: UserEquipmentVue },
       //安全评价
       { path: '/evaluate/Evaluate', component: Evaluate },
-
+      {
+        path: '/views/user',
+        name: 'user',
+        meta: {
+            title: '个人中心',
+        },
+        component: () => import(/* webpackChunkName: "user" */ '../views/user.vue'),
+    },
 
 
       // { path: '/user/avatar', component: UserAvatarVue },
