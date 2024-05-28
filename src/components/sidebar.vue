@@ -1,15 +1,7 @@
 <template>
     <div class="sidebar">
-        <el-menu
-            class="sidebar-el-menu"
-            :default-active="onRoutes"
-            :collapse="sidebar.collapse"
-            background-color="#324157"
-            text-color="#bfcbd9"
-            active-text-color="#20a0ff"
-            unique-opened
-            router
-        >
+        <el-menu class="sidebar-el-menu" :default-active="onRoutes" :collapse="sidebar.collapse"
+            background-color="#232323" text-color="#bfcbd9" active-text-color="#ffd04b" unique-opened router>
             <template v-for="item in items">
                 <template v-if="item.subs">
                     <el-sub-menu :index="item.index" :key="item.index" v-permiss="item.permiss">
@@ -19,13 +11,10 @@
                             </el-icon>
                             <span>{{ item.title }}</span>
                         </template>
+
                         <template v-for="subItem in item.subs">
-                            <el-sub-menu
-                                v-if="subItem.subs"
-                                :index="subItem.index"
-                                :key="subItem.index"
-                                v-permiss="item.permiss"
-                            >
+                            <el-sub-menu v-if="subItem.subs" :index="subItem.index" :key="subItem.index"
+                                v-permiss="item.permiss">
                                 <template #title>{{ subItem.title }}</template>
                                 <el-menu-item v-for="(threeItem, i) in subItem.subs" :key="i" :index="threeItem.index">
                                     {{ threeItem.title }}
@@ -37,6 +26,7 @@
                         </template>
                     </el-sub-menu>
                 </template>
+
                 <template v-else>
                     <el-menu-item :index="item.index" :key="item.index" v-permiss="item.permiss">
                         <el-icon>
@@ -56,6 +46,77 @@ import { useSidebarStore } from '../store/sidebar';
 import { useRoute } from 'vue-router';
 
 const items = [
+
+    {
+        index: '1',
+        icon: 'User',
+        title: '用户管理',
+        permiss: '2',
+        subs: [
+            {
+                index: '/userInfo',
+                title: '信息管理',
+                permiss: '2',
+            },      
+                  {
+                index: '/equipInfo',
+                title: '设备管理',
+                permiss: '2',
+            },
+            {
+                index: '/areaInfo',
+                title: '作业区管理',
+                permiss: '2',
+            },
+
+        ],
+    }, {
+        index: '4',
+        icon: 'Reading',
+        title: '安全评价',
+        permiss: '4',
+        subs: [
+            {
+                index: '/editor',
+                title: '危险源辨识',
+                permiss: '5',
+            },
+            {
+                index: '/tabs',
+                title: '安全评价表',
+                permiss: '6',
+            },
+        ],
+    },
+
+    {
+        icon: 'View',
+        index: '7',
+        title: '安全监控',
+        permiss: '7',
+        subs: [
+            {
+                icon: 'UploadFilled',
+                index: '/uploadFile',
+                title: '图片管理',
+                permiss: '8'
+            },
+            {
+                icon: 'Search',
+                index: '/detection',
+                title: '目标检测',
+                permiss: '9'
+            },
+            // {
+            //     icon: 'Notebook',
+            //     index: '/resultManager',
+            //     title: '记录管理',
+            //     permiss: '10'
+            // },
+        ],
+    },
+
+
     // {
     //     icon: 'Odometer',
     //     index: '/dashboard',
@@ -150,24 +211,6 @@ const items = [
     //     title: '支持作者',
     //     permiss: '14',
     // },
-    {
-      icon: 'UploadFilled',
-      index: '/uploadFile',
-      title: '图片管理',
-      permiss: '15'
-    },
-    {
-      icon: 'Search',
-      index: '/detection',
-      title: '目标检测',
-      permiss: '16'
-    },
-    {
-      icon: 'Notebook',
-      index: '/resultManager',
-      title: '记录管理',
-      permiss: '1'
-    }
 ];
 
 const route = useRoute();
@@ -187,13 +230,17 @@ const sidebar = useSidebarStore();
     bottom: 0;
     overflow-y: scroll;
 }
+
 .sidebar::-webkit-scrollbar {
     width: 0;
 }
+
 .sidebar-el-menu:not(.el-menu--collapse) {
     width: 250px;
 }
-.sidebar > ul {
+
+.sidebar>ul {
     height: 100%;
 }
 </style>
+
