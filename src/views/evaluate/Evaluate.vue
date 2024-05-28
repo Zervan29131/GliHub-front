@@ -29,8 +29,9 @@
           <el-button>重置</el-button>
         </el-form-item>
       </el-form>
-
     </el-tab-pane>
+
+    
     <!-- 作业条件危险性分析法 -->
     <el-tab-pane label="作业条件危险性分析法LEC">
       <el-form :model="form" label-width="300px" class="short-input">

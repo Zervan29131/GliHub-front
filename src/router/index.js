@@ -3,7 +3,7 @@
 import { createRouter, createWebHashHistory, } from 'vue-router'
 //导入组件
 import Login from '@/views/login.vue'
-import regist from '@/views/regist.vue'
+// import regist from '@/views/regist.vue'
 import Home from '@/views/home.vue'
 
 // import ArticleCategoryVue from '@/views/article/ArticleCategory.vue'
@@ -21,7 +21,7 @@ import ArticleManageVue from '@/views/user/UserInfo.vue'
 
 
 const routes = [
-  { path: '/regist', component: regist },
+  // { path: '/regist', component: regist },
   { path: '/login', component: Login },
   {
     path: '/', component: Home,
